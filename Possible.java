@@ -1,27 +1,28 @@
 import java.util.Scanner;
-public class Possible
+class Possible
 {
-    int Number(int n)
-    {int i=0;
-        int a[]={0,0,0};
+   void Number(int n)
+    {int i=2;
+        int a[]=new int[3];
         while(n!=0)
         {
          a[i]=n%10;
         n=n/10;
-        i++;
+        i--;
         }
-        return a;
+       initial(a);
 
     }
-    void initial(int a[])
+  
+    void initial(int[] arr)
     {
 System.out.println("The possible number are:");
-System.out.println(a[0]+a[1]+a[2]);
-System.out.println(a[0]+a[2]+a[1]);
-System.out.println(a[1]+a[0]+a[2]);
-System.out.println(a[1]+a[2]+a[0]);
-System.out.println(a[2]+a[1]+a[0]);
-System.out.println(a[2]+a[0]+a[1]);
+System.out.println(arr[0]+""+arr[1]+""+arr[2]);
+System.out.println(arr[0]+""+arr[2]+""+arr[1]);
+System.out.println(arr[1]+""+arr[0]+""+arr[2]);
+System.out.println(arr[1]+""+arr[2]+""+arr[0]);
+System.out.println(arr[2]+""+arr[1]+""+arr[0]);
+System.out.println(arr[2]+""+arr[0]+""+arr[1]);
     }
 
     public static void main(String[] args)
@@ -30,9 +31,10 @@ System.out.println(a[2]+a[0]+a[1]);
         System.out.println("Give a three digit number to get the possible outcomes: ");
         int n=sc.nextInt();
         Possible ob=new Possible();
-        int a[]=ob.Number(n);
-        ob.initial(a);
+        ob.Number(n);
+       
         
     }
 }
-}
+    
+    }
